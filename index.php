@@ -24,6 +24,60 @@
 </head>
 <body>
 
+    <main>
+        <div class="container">
+            <h1 class="text-center">Pet Products</h1>
+            <div class="foods">
+                <h2 class="text-center">FOOD</h2>
+                <?php 
+                    foreach($foods as $product){
+                ?>
+
+                <div class="card">
+
+                    <img src="<?= $product->image ?>" alt="<?= $product->name ?>" class="card-img-top">
+                    </img>
+                    <div class="card-title">
+                        <h4><?= $product->name ?></h4>
+                    </div>
+                    <div class="card-text">
+                        Category: 
+                        <?php 
+                        if($product->pet == 'dogs'){
+                            ?>
+                            <i class="fa-solid fa-dog"></i>
+                            <?php
+                        } elseif($product->pet == 'cats') {
+                            ?>
+                            <i class="fa-solid fa-cat"></i>
+                            <?php
+                        }
+                        ?>
+                        <div>
+                            <div>Price: <?= $product->getPrice(); ?></div>
+                            <div>Description: <?= $product->desc ?></div>
+                            <div>Code: <?= $product->prodCode ?></div>
+                            <div>Weitght: <?= $product->weight ?></div>
+                            <div>Ingredients: <?= $product->getIngredients($product->ingredients)
+                            ?></div>
+
+                        </div>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+
+                </div>
+
+         
+               
+            <?php
+            }
+            ?>
+            </div>
+            
+
+        </div>
+    </main>
+
 
 
 

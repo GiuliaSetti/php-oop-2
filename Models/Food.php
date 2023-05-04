@@ -15,6 +15,12 @@
             $this->weight = $weight;
             $this->ingredients = $ingredients; 
         }
+
+
+        public function getIngredients($ingredients){
+            return implode(", ", $ingredients);
+
+        }
     }
 
 
