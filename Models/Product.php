@@ -10,32 +10,24 @@
         public $price;
         public $image;
         public $desc; 
-        public $prodCode; 
+
 
         // costruttore
-        function __construct(string $name, string $pet, string $price, string $image, string $desc, int $prodCode)
+        function __construct(string $name, string $pet, string $price, string $image, string $desc)
         {
             $this ->name = $name;
             $this ->pet = $pet;
             $this ->price = $price;
             $this ->image = $image;
             $this ->desc = $desc;
-            $this ->prodCode = $prodCode;
         }
 
         // metodo per prezzo
         public function getPrice(){
             return "{$this->price}€";
         }
-        // metodo per codice prodotto
-        public function getCode(){
-            return $this->prodCode;
-        }
-        // metodo per gruppo
-        public function getPet()
-        {
-            return $this->pet;
-        }
+
+        
     
 
     }

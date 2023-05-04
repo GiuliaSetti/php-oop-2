@@ -6,10 +6,10 @@
         public $material;
         public $age;
 
-        function __construct(string $name, string $pet, string $price, string $image, string $desc, int $prodCode, string $material, string $age)
+        function __construct(string $name, string $pet, string $price, string $image, string $desc, string $material, string $age)
         {
             //proprietà della classe genitore
-            parent::__construct($name, $image, $price, $pet, $desc, $prodCode);
+            parent::__construct($name, $pet, $price, $image,  $desc);
 
             //proprietà aggiuntive della classe figlio
             $this->material = $material;
