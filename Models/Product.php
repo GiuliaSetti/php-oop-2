@@ -6,26 +6,26 @@
     class Product{
         
         public $name;
+        public $pet; 
         public $price;
         public $image;
-        public $pet;
         public $desc; 
         public $prodCode; 
 
         // costruttore
-        function __construct(string $name, float $price, string $image, Pet $pet, string $desc, int $prodCode)
+        function __construct(string $name, string $pet, string $price, string $image, string $desc, int $prodCode)
         {
             $this ->name = $name;
+            $this ->pet = $pet;
             $this ->price = $price;
             $this ->image = $image;
-            $this ->pet = $pet;
             $this ->desc = $desc;
             $this ->prodCode = $prodCode;
         }
 
         // metodo per prezzo
         public function getPrice(){
-            return $this->price;
+            return "{$this->price}€";
         }
         // metodo per codice prodotto
         public function getCode(){
