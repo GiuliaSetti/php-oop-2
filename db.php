@@ -32,5 +32,3 @@
     // var_dump($foods);
     // var_dump($toys);
     // var_dump($accessories);
-
-?>
