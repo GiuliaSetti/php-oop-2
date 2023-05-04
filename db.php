@@ -2,7 +2,7 @@
 
 
     require_once './Models/Pet.php';
-    require_once './Models/Products.php';
+    require_once './Models/Product.php';
 
     $pets = [
         $cats = new Pet('Cats', 'fa-solid fa-cat'),

@@ -31,6 +31,12 @@
         public function getCode(){
             return $this->prodCode;
         }
+        // metodo per gruppo
+        public function getPet()
+        {
+            return $this->pet;
+        }
+    
 
     }
 
