@@ -2,7 +2,6 @@
 
     require_once './db.php';
 
-
 ?>
 
 
@@ -27,7 +26,7 @@
     <main>
         <div class="container">
             <h1 class="text-center">Pet Products</h1>
-            
+            <hr>
             <!-- food section -->
             <div class="food_section my-3">
                 <h2 class="text-center">FOOD</h2>
@@ -35,39 +34,38 @@
                     <?php 
                         foreach($foods as $product){
                     ?>
-    
-                    <div class="card">
-                            <img src="<?= $product->image ?>" alt="<?= $product->name ?>">
+                    <!-- inizio card FOOD -->
+                    <div class="card d-flex flex-column justify-content-between" style="width: 13rem;">
+
+                            <!-- immagine -->
+                            <img class="card-img-top" src="<?= $product->getImage()?>" alt="<?= $product->getName()?>">
+                        
+                            <!-- titolo -->
                         <div class="card-title">
-                            <h4 class="text-center my-2"><?= $product->name ?></h4>
+                            <h4 class="text-center my-2"><?= $product->getName()?></h4>
                         </div>
+
+                        <!-- testo -->
                         <div class="card-text d-flex flex-column">
                            <div class="text-center">
-                                <h5 class="my-2">Category:</h5> 
-                                <?php 
-                                if($product->pet == 'dogs'){
-                                    ?>
-                                    <i class="fa-solid fa-dog"></i>
-                                    <?php
-                                } elseif($product->pet == 'cats') {
-                                    ?>
-                                    <i class="fa-solid fa-cat"></i>
-                                    <?php
-                                }
-                                ?>
 
+                                <h5 class="my-2">Category:</h5> 
+                                <!-- icona -->
+                                <i class="fa-solid <?= $product->getCategory()->getIcon() ?>">
+                                </i>
 
                            </div> 
+
+                           <!-- info -->
                             <div class="info px-2">
+
                                 <div>Price: <?= $product->getPrice(); ?></div>
-                                <div>Description: <?= $product->desc ?></div>
-                                <div>Weight: <?= $product->weight ?>kg</div>
-                                <div>Ingredients: <?= $product->getIngredients($product->ingredients)
-                                ?></div>
+                                <div class="fst-italic"><?= $product->getDesc(); ?></div>
+                                <div>Weight: <?= $product->getWeigth() ?>kg</div>
     
                             </div>
                             
-                            <a href="#" class="btn btn-primary justify-self-center mx-5 my-3">Add to Cart</a>
+                            <a href="#" class="btn btn-primary justify-self-center mx-3 my-3">Add to Cart</a>
                         </div>
     
                     </div>
@@ -81,46 +79,47 @@
 
             </div>
             <!-- /food section -->
+
+            <hr>
             <!-- toys section -->
-            <div class="toys_section my-3">
+            <div class="food_section my-3">
                 <h2 class="text-center">TOYS</h2>
-                <div class="toys d-flex justify-content-center gap-5 my-3">
+                <div class="foods d-flex justify-content-center gap-5 my-3">
                     <?php 
                         foreach($toys as $product){
                     ?>
-    
-                    <div class="card">
-                            <img src="<?= $product->image ?>" alt="<?= $product->name ?>">
+                    <!-- inizio card FOOD -->
+                    <div class="card d-flex flex-column justify-content-between" style="width: 13rem;">
+
+                            <!-- immagine -->
+                            <img class="card-img-top" src="<?= $product->getImage()?>" alt="<?= $product->getName()?>">
+                        
+                            <!-- titolo -->
                         <div class="card-title">
-                            <h4 class="text-center"><?= $product->name ?></h4>
+                            <h4 class="text-center my-2"><?= $product->getName()?></h4>
                         </div>
+
+                        <!-- testo -->
                         <div class="card-text d-flex flex-column">
                            <div class="text-center">
-                                <h5 class="my-2">Category:</h5> 
-                                <?php 
-                                if($product->pet == 'dogs'){
-                                    ?>
-                                    <i class="fa-solid fa-dog"></i>
-                                    <?php
-                                } elseif($product->pet == 'cats') {
-                                    ?>
-                                    <i class="fa-solid fa-cat"></i>
-                                    <?php
-                                }
-                                ?>
 
+                                <h5 class="my-2">Category:</h5> 
+                                <!-- icona -->
+                                <i class="fa-solid <?= $product->getCategory()->getIcon() ?>">
+                                </i>
 
                            </div> 
+
+                           <!-- info -->
                             <div class="info px-2">
+
                                 <div>Price: <?= $product->getPrice(); ?></div>
-                                <div>Description: <?= $product->desc ?></div>
-                                <div>Pet age: <?= $product->age ?></div>
-                                <div>Made of <?= $product->material
-                                ?></div>
+                                <div class="fst-italic"><?= $product->getDesc(); ?></div>
+                                <div>Made by <b class="text-uppercase"><?= $product->getBrand() ?></b> </div>
     
                             </div>
                             
-                            <a href="#" class="btn btn-primary justify-self-center mx-5 my-3">Add to Cart</a>
+                            <a href="#" class="btn btn-primary justify-self-center mx-3 my-3">Add to Cart</a>
                         </div>
     
                     </div>
@@ -134,47 +133,42 @@
 
             </div>
             <!-- /toys section -->
+            <hr>
             <!-- accessories section -->
-            <div class="accessories_section my-3">
+            <div class="food_section my-3">
                 <h2 class="text-center">ACCESSORIES</h2>
-                <div class="accessories d-flex justify-content-center gap-5 my-3">
+                <div class="foods d-flex justify-content-center gap-5 my-3">
                     <?php 
                         foreach($accessories as $product){
                     ?>
-    
-                    <div class="card">
-                            <img src="<?= $product->image ?>" alt="<?= $product->name ?>">
+                    <!-- inizio card FOOD -->
+                    <div class="card d-flex flex-column justify-content-between" style="width: 13rem;">
+
+                            <!-- immagine -->
+                            <img class="card-img-top" src="<?= $product->getImage()?>" alt="<?= $product->getName()?>">
+                        
+                            <!-- titolo -->
                         <div class="card-title">
-                            <h4 class="text-center"><?= $product->name ?></h4>
+                            <h4 class="text-center my-2"><?= $product->getName()?></h4>
                         </div>
+
+                        <!-- testo -->
                         <div class="card-text d-flex flex-column">
                            <div class="text-center">
-                                <h5 class="my-2">Category:</h5> 
-                                <?php 
-                                if($product->pet == 'dogs'){
-                                    ?>
-                                    <i class="fa-solid fa-dog"></i>
-                                    <?php
-                                } elseif($product->pet == 'cats') {
-                                    ?>
-                                    <i class="fa-solid fa-cat"></i>
-                                    <?php
-                                } else {
-                                    ?>
-                                    <i class="fa-solid fa-dog"></i> -
-                                    <i class="fa-solid fa-cat"></i>
-                                    <?php
-                                }
-                                ?>
 
+                                <h5 class="my-2">Category:</h5> 
+                                <!-- icona -->
+                                <i class="fa-solid <?= $product->getCategory()->getIcon() ?>">
+                                </i>
 
                            </div> 
+
+                           <!-- info -->
                             <div class="info px-2">
+
                                 <div>Price: <?= $product->getPrice(); ?></div>
-                                <div>Description: <?= $product->desc ?></div>
-                                <div>Type of Product: <?= $product->type ?></div>
-                                <div>Made for <?= $product->size
-                                ?></div>
+                                <div class="fst-italic"><?= $product->getDesc(); ?></div>
+                                <div><?= $product->getType() ?></div>
     
                             </div>
                             

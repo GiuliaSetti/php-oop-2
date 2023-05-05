@@ -1,27 +1,27 @@
 
-<!-- creo una classe per distinguere le categorie di animali - con le rispettive icone -->
-<?php 
-
-    // classe gruppo animali
-    class Pet{
-        
-        public $name;
-        public $icon; 
+<!-- classe PET / CATEGORY (dopo correzione) -->
+<?php
 
 
-        function __construct(string $name, string $icon)
-        {
-            $this ->name = $name;
-            $this ->icon = $icon;
-        }
+class Pet {
+    //cambio da public a protected
+    protected $name;
+    protected $icon;
 
+    //costruttore
+    function __construct(string $name, string $icon) {
 
-        public function getIcon(){
-            return $this-> icon; 
-        }
+        $this->name = $name;
+        $this->icon = $icon;
 
     }
+    // metodo per nome
+    public function getName() {
+        return $this->name;
+    }
+    // metodo per icona
+    public function getIcon() {
+        return $this->icon;
+    }
 
-
-
-?>
+}
