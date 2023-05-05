@@ -4,20 +4,27 @@
     require_once __DIR__ . '/Product.php';
     require_once __DIR__ . '/Pet.php';
 
+    //tratti
+    require_once __DIR__ . '/../Traits/Age.php';
+   
+
     //classe FOOD che estende PRODOTTI
     class Food extends Product
     {
+        use Age;
+
         protected $weight;
         protected $ingredients;
 
-        function __construct(string $name, Pet $pet, float $price, string $image, string $desc, float $weight, array $ingredients)
+        function __construct(string $name, Pet $pet, float $price, string $image, string $desc, float $weight, array $ingredients, string $age)
         {
             //proprietà della classe genitore
             parent::__construct($name, $pet, $price, $image,  $desc);
 
             //proprietà aggiuntive della classe figlio
             $this->weight = $weight;
-            $this->ingredients = $ingredients; 
+            $this->ingredients = $ingredients;
+            $this->age = $age;  
         }
 
 

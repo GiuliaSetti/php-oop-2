@@ -38,6 +38,7 @@
                                 <div>Price: <?= $product->getPrice(); ?></div>
                                 <div class="fst-italic"><?= $product->getDesc(); ?></div>
                                 <div>Weight: <?= $product->getWeigth() ?>kg</div>
+                                <div>For <?= $product->getAge() ?></div>
     
                             </div>
                             
@@ -92,6 +93,7 @@
                                 <div>Price: <?= $product->getPrice(); ?></div>
                                 <div class="fst-italic"><?= $product->getDesc(); ?></div>
                                 <div>Made by <b class="text-uppercase"><?= $product->getBrand() ?></b> </div>
+                                <div>For <?= $product->getAge() ?></div>
     
                             </div>
                             
