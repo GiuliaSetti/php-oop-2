@@ -6,6 +6,6 @@ trait Material {
   protected $material;
 
   public function getMaterial(){
-    return $this->age;
+    return $this->material;
   }
 }

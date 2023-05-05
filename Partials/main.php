@@ -37,8 +37,10 @@
 
                                 <div>Price: <?= $product->getPrice(); ?></div>
                                 <div class="fst-italic"><?= $product->getDesc(); ?></div>
+                                <div><?= $product->getIng() ?></div>
                                 <div>Weight: <?= $product->getWeigth() ?>kg</div>
-                                <div>For <?= $product->getAge() ?></div>
+                                <div class="small">For <?= $product->getAge() ?></div>
+                                <div class="text-body-tertiary"><?= $product->getSize() ?></div>
     
                             </div>
                             
@@ -59,7 +61,7 @@
 
             <hr>
             <!-- toys section -->
-            <div class="food_section my-3">
+            <div class="toys_section my-3">
                 <h2 id="toys" class="text-center">TOYS</h2>
                 <div class="foods d-flex justify-content-center gap-5 my-3">
                     <?php 
@@ -93,7 +95,8 @@
                                 <div>Price: <?= $product->getPrice(); ?></div>
                                 <div class="fst-italic"><?= $product->getDesc(); ?></div>
                                 <div>Made by <b class="text-uppercase"><?= $product->getBrand() ?></b> </div>
-                                <div>For <?= $product->getAge() ?></div>
+                                <div class="text-body-tertiary">For <?= $product->getAge() ?></div>
+                                <div class="small">Made of <?= $product->getMaterial() ?></div>
     
                             </div>
                             
@@ -113,7 +116,7 @@
             <!-- /toys section -->
             <hr>
             <!-- accessories section -->
-            <div class="food_section my-3">
+            <div class="accessories_section my-3">
                 <h2 id="accessories" class="text-center">ACCESSORIES</h2>
                 <div class="foods d-flex justify-content-center gap-5 my-3">
                     <?php 
@@ -147,7 +150,9 @@
                                 <div>Price: <?= $product->getPrice(); ?></div>
                                 <div class="fst-italic"><?= $product->getDesc(); ?></div>
                                 <div><?= $product->getType() ?></div>
-    
+                                <div class="small">Made of <?= $product->getMaterial() ?></div>
+                                <div class="text-body-tertiary"><?= $product->getSize() ?></div>
+
                             </div>
                             
                             <a href="#" class="btn btn-primary justify-self-center mx-5 my-3">Add to Cart</a>
